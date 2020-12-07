@@ -23,7 +23,7 @@ public class Agenda {
                 contatoPJ.setTelefone(Integer.parseInt(sc.nextLine()));
                 t=1;
             } catch (NumberFormatException e) {
-                System.out.println("Telefone inválido!");
+                System.out.println("Telefone inválido!\n");
             }
         } while(t != 1);
         System.out.println("Site: ");
@@ -31,7 +31,7 @@ public class Agenda {
         System.out.println("Nome do contato na empresa: ");
         contatoPJ.setFuncionário(sc.nextLine());
         this.contatos.add(contatoPJ);
-        System.out.println("\nContato PJ adicionado com sucesso!");
+        System.out.println("\nContato PJ adicionado com sucesso!\n");
     };
 
     public void CadastrarPF(){
@@ -49,7 +49,7 @@ public class Agenda {
                 contatoPF.setTelefone(Integer.parseInt(sc.nextLine()));
                 t=1;
             } catch (NumberFormatException e) {
-                System.out.println("Telefone inválido!");
+                System.out.println("Telefone inválido!\n");
             }
         } while(t != 1);
         do{
@@ -58,23 +58,24 @@ public class Agenda {
                 contatoPF.setDataNascimento(sc.nextLine());
                 t=2;
             } catch (ParseException e) {
-                System.out.println("Data inválida!");
+                System.out.println("Data inválida!\n");
             }
         } while(t != 2);
         this.contatos.add(contatoPF);
-        System.out.println("\nContato PF adicionado com sucesso!");
+        System.out.println("\nContato PF adicionado com sucesso!\n");
     }
 
 
     public void Listar(){
         if (contatos.isEmpty()){
-            System.out.println("\nAgenda Vazia!");
+            System.out.println("\nAgenda Vazia!\n");
         }else {
             for (ContatoBasico c : this.contatos){
                 {
                     System.out.println(c.toString());
                 }
             }
+            System.out.println(" ");
         }
     }
 
@@ -82,27 +83,37 @@ public class Agenda {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite o nome para busca: ");
         String nome = sc.nextLine();
-        for (int i = 0; i < contatos.size(); i++){
-            if(contatos.get(i).getNome().equalsIgnoreCase(nome)){
-                System.out.println(contatos.get(i));
-            } else {
-                System.out.println("\nContato não encontrado!");
+        if (contatos.isEmpty()) {
+            System.out.println("\nAgenda Vazia!\n");
+        } else {
+            for (ContatoBasico c : this.contatos) {
+                if (c.getNome().equalsIgnoreCase(nome)) {
+                    System.out.println(c.toString());
+                    System.out.println(" ");
+                        return;
+                    }
+
+                }
+                System.out.println("\nContato não encontrado!\n");
             }
         }
 
-    }
     public void Excluir() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite o nome do contato para exclusão: ");
         String nome = sc.nextLine();
-        for (int i = 0; i < contatos.size(); i++){
-            if(contatos.get(i).getNome().equalsIgnoreCase(nome)){
-                contatos.remove(i);
-                System.out.println("\nContato excluído com sucesso!");
-            } else {
-                System.out.println("\nContato não encontrado!");
+        if (contatos.isEmpty()) {
+            System.out.println("\nAgenda Vazia!\n");
+        } else {
+            for (ContatoBasico c : this.contatos) {
+                if (c.getNome().equalsIgnoreCase(nome)) {
+                    contatos.remove(c);
+                    System.out.println("\nContato excluído com sucesso!\n");
+                        return;
+                }
+                }
+            System.out.println("\nContato não encontrado!\n");
             }
         }
-
     }
-}
+

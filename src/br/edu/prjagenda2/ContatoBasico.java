@@ -34,7 +34,7 @@ public abstract class ContatoBasico {
     public String toString() {
         return "{" +
                 "nome=' "+ nome + '\'' +
-                "email='" + email + '\'' +
+                ", email='" + email + '\'' +
                 ", telefone=" + telefone +
                 ',';
     }
