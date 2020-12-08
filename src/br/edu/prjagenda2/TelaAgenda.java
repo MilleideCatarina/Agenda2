@@ -9,10 +9,6 @@ import java.util.Scanner;
 
 public class TelaAgenda {
     private JTabbedPane tabbedPane1;
-    private JTabbedPane tabbedPane2;
-    private JTabbedPane tabbedPane3;
-    private JTabbedPane tabbedPane4;
-    private JTabbedPane tabbedPane5;
     private JTextField textField1;
     private JTextField textField3;
     private JTextField textField4;
@@ -20,6 +16,18 @@ public class TelaAgenda {
     private JTextField textField6;
     private JButton cadastrarButton;
     private JPanel Agenda;
+    private JTextField textField2;
+    private JTextField textField7;
+    private JTextField textField8;
+    private JTextField textField9;
+    private JButton CADASTRARButton;
+    private JButton LISTARButton;
+    private JTextField textField10;
+    private JTextField textField11;
+    private JTextField textField12;
+    private JButton BUSCARButton;
+    private JTextField textField13;
+    private JButton EXCLUIRButton;
 
     public JPanel getAgenda() {
         return Agenda;
