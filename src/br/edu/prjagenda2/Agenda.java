@@ -8,6 +8,14 @@ import java.util.Scanner;
 public class Agenda {
     List<ContatoBasico> contatos = new ArrayList<>();
 
+    public List<ContatoBasico> getContatos() {
+        return contatos;
+    }
+
+    public void setContatos(List<ContatoBasico> contatos) {
+        this.contatos = contatos;
+    }
+
     public void CadastrarPJ() {
         ContatoPJ contatoPJ = new ContatoPJ();
         Scanner sc = new Scanner(System.in);
