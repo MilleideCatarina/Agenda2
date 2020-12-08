@@ -1,13 +1,11 @@
 package br.edu.prjagenda2;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class TelaAgenda {
     private JTabbedPane tabbedPane1;
@@ -30,6 +28,7 @@ public class TelaAgenda {
     private JButton BUSCARButton;
     private JTextField textField13;
     private JButton EXCLUIRButton;
+    private JTextArea textArea1;
 
     public JPanel getAgenda() {
         return Agenda;
@@ -107,7 +106,7 @@ public class TelaAgenda {
                 } else {
                     for (ContatoBasico c : contatos) {
                         {
-                            textField10.setText(String.valueOf(c.toString()));
+                            textArea1.setText(String.valueOf(contatos.toString()));
                         }
                     }
 

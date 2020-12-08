@@ -26,6 +26,6 @@ public class ContatoPJ extends ContatoBasico {
                 "" +
                 "Homepage='" + homepage + '\'' +
                 ", funcionário='" + funcionário + '\'' +
-                '}';
+                '}' + '\n';
     }
 }
