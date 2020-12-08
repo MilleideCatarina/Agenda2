@@ -3,6 +3,7 @@ package br.edu.prjagenda2;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -33,29 +34,119 @@ public class TelaAgenda {
         return Agenda;
     }
 
+    List<ContatoBasico> contatos = new ArrayList<>();
+
+    public List<ContatoBasico> getContatos() {
+        return contatos;
+    }
+
+    public void setContatos(List<ContatoBasico> contatos) {
+        this.contatos = contatos;
+    }
 
     public TelaAgenda() {
         cadastrarButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                    ContatoPJ contatoPJ = new ContatoPJ();
-                    contatoPJ.setNome(textField1.getText());
-                    contatoPJ.setEmail(textField3.getText());
-                      try {
-                            contatoPJ.setTelefone(Integer.parseInt(textField4.getText()));
+                ContatoPJ contatoPJ = new ContatoPJ();
+                contatoPJ.setNome(textField1.getText());
+                contatoPJ.setEmail(textField3.getText());
+                    try {
+                        contatoPJ.setTelefone(Integer.parseInt(textField4.getText()));
 
-                        } catch (NumberFormatException ex) {
-                            JOptionPane.showMessageDialog(null, "Erro Telefone Inválido!");
-                            System.out.println(" erro:" + ex.getMessage());
-                        }
-                    contatoPJ.setHomepage(textField5.getText());
-                    contatoPJ.setFuncionário(textField6.getText());
-                    Agenda agenda = new Agenda();
-                    agenda.contatos.add(contatoPJ);
-                    JOptionPane.showMessageDialog(null, "Contato PJ cadastrado com sucesso!");
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "Erro Telefone Inválido!");
+                        System.out.println(" erro:" + ex.getMessage());
+                        return;
+                    }
+                contatoPJ.setHomepage(textField5.getText());
+                contatoPJ.setFuncionário(textField6.getText());
+                contatos.add(contatoPJ);
+                JOptionPane.showMessageDialog(null, "ContatoPJ cadastrado com sucesso!");
+            }
+
+        });
+
+        CADASTRARButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                ContatoPF contatoPF = new ContatoPF();
+                contatoPF.setNome(textField2.getText());
+                contatoPF.setEmail(textField7.getText());
+                 try {
+                    contatoPF.setTelefone(Integer.parseInt(textField8.getText()));
+
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Erro Telefone Inválido!");
+                    System.out.println(" erro:" + ex.getMessage());
+                    return;
+                }
+                try {
+                    contatoPF.setDataNascimento(textField9.getText());
+
+                } catch (ParseException ex) {
+                    JOptionPane.showMessageDialog(null, "Data Inválida!");
+                    System.out.println(" erro:" + ex.getMessage());
+                    return;
                 }
 
-            });
+                contatos.add(contatoPF);
+                JOptionPane.showMessageDialog(null, "ContatoPF cadastrado com sucesso!");
+
+            }
+
+        });
+        LISTARButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+              if (contatos.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Agenda Vazia!");
+                } else {
+                    for (ContatoBasico c : contatos) {
+                        {
+                            textField10.setText(String.valueOf(c.toString()));
+                        }
+                    }
+
+                }
+            }
+        });
+        BUSCARButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+              if (contatos.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Agenda Vazia!");
+                } else {
+                    for (ContatoBasico c : contatos) {
+                        if (c.getNome().equalsIgnoreCase(textField11.getText())) {
+                            textField12.setText(String.valueOf(c.toString()));
+                            return;
+                        }
+
+                    }
+                    JOptionPane.showMessageDialog(null, "Contato não encontrado!");
+                }
+            }
+        });
+
+        EXCLUIRButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               if (contatos.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Agenda Vazia!");
+                } else {
+                    for (ContatoBasico c : contatos) {
+                        if (c.getNome().equalsIgnoreCase(textField13.getText())) {
+                            contatos.remove(c);
+                            JOptionPane.showMessageDialog(null, "Contato excluído com sucesso!");
+                            return;
+                        }
+                    }
+                    JOptionPane.showMessageDialog(null, "Contato não encontrado!");
+                }
+            }
+
+        });
 
     }
 }
