@@ -152,18 +152,43 @@ public class TelaAgenda {
 
     }
     public void acaobotaolimpa() {
-        textField1.setText("");
-        textField2.setText("");
-        textField3.setText("");
-        textField4.setText("");
-        textField5.setText("");
-        textField6.setText("");
-        textField7.setText("");
-        textField8.setText("");
-        textField9.setText("");
-        textField10.setText("");
-        textField11.setText("");
-        textField12.setText("");
-        textField13.setText("");
+        if (textField1 != null) {
+        textField1.setText(""); }
+
+        if (textField2 != null) {
+        textField2.setText("");}
+
+        if (textField3 != null) {
+        textField3.setText("");}
+
+        if (textField4 != null) {
+        textField4.setText("");}
+
+        if (textField5 != null) {
+        textField5.setText("");}
+
+        if (textField6 != null) {
+        textField6.setText("");}
+
+        if (textField7 != null) {
+        textField7.setText("");}
+
+        if (textField8 != null) {
+        textField8.setText("");}
+
+        if (textField9 != null) {
+        textField9.setText("");}
+
+        if (textField10 != null) {
+        textField10.setText("");}
+
+        if (textField11 != null) {
+        textField11.setText("");}
+
+        if (textField12 != null) {
+        textField12.setText("");}
+
+        if (textField13 != null) {
+        textField13.setText("");}
     }
 }
