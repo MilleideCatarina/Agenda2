@@ -103,6 +103,7 @@ public class TelaAgenda {
             public void mouseClicked(MouseEvent e) {
               if (contatos.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Agenda Vazia!");
+                    acaobotaolimpa();
                 } else {
                     for (ContatoBasico c : contatos) {
                         {
@@ -118,6 +119,7 @@ public class TelaAgenda {
             public void mouseClicked(MouseEvent e) {
               if (contatos.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Agenda Vazia!");
+                    acaobotaolimpa();
                 } else {
                     for (ContatoBasico c : contatos) {
                         if (c.getNome().equalsIgnoreCase(textField11.getText())) {
@@ -127,6 +129,7 @@ public class TelaAgenda {
 
                     }
                     JOptionPane.showMessageDialog(null, "Contato não encontrado!");
+                    acaobotaolimpa();
                 }
             }
         });
@@ -145,6 +148,7 @@ public class TelaAgenda {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "Contato não encontrado!");
+                    acaobotaolimpa();
                 }
             }
 
