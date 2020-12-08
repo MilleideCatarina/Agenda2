@@ -1,6 +1,7 @@
 package br.edu.prjagenda2;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.ParseException;
@@ -63,6 +64,7 @@ public class TelaAgenda {
                 contatoPJ.setFuncionário(textField6.getText());
                 contatos.add(contatoPJ);
                 JOptionPane.showMessageDialog(null, "ContatoPJ cadastrado com sucesso!");
+                acaobotaolimpa();
             }
 
         });
@@ -92,6 +94,7 @@ public class TelaAgenda {
 
                 contatos.add(contatoPF);
                 JOptionPane.showMessageDialog(null, "ContatoPF cadastrado com sucesso!");
+                acaobotaolimpa();
 
             }
 
@@ -148,5 +151,20 @@ public class TelaAgenda {
 
         });
 
+    }
+    public void acaobotaolimpa() {
+        textField1.setText("");
+        textField2.setText("");
+        textField3.setText("");
+        textField4.setText("");
+        textField5.setText("");
+        textField6.setText("");
+        textField7.setText("");
+        textField8.setText("");
+        textField9.setText("");
+        textField10.setText("");
+        textField11.setText("");
+        textField12.setText("");
+        textField13.setText("");
     }
 }

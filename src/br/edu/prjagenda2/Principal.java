@@ -9,56 +9,15 @@ import java.util.Scanner;
 public class Principal {
 
 
+    public static void main(String[] args) {
 
-        public static void main(String[] args) {
-
-            JFrame janela = new JFrame("Agenda");
-            janela.setContentPane(new TelaAgenda().getAgenda());
-            janela.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-            janela.pack();
-            janela.setVisible(true);
-        }
-        /*
-        Agenda agenda = new Agenda();
-        Scanner sc = new Scanner(System.in);
-        int op = 0;
-
-        do {
-            System.out.println("*-*-*-*-*-*-*-*-*-*");
-            System.out.println("Minha Agenda:");
-            System.out.println("*-*-*-*-*-*-*-*-*-*\n");
-            System.out.println("Menu \n");
-            System.out.println("1- Cadastrar PJ \n2- Cadastrar PF  \n3- Listar \n4- Buscar \n5- Excluir \n6- Sair");
-            try {
-                op = Integer.parseInt(sc.nextLine());
-                switch (op) {
-                    case 1:
-                        agenda.CadastrarPJ();
-                        break;
-                    case 2:
-                        agenda.CadastrarPF();
-                        break;
-                    case 3:
-                        agenda.Listar();
-                        break;
-                    case 4:
-                        agenda.Buscar();
-                        break;
-                    case 5:
-                        agenda.Excluir();
-                        break;
-                    case 6:
-                        System.out.println("Finalizando...");
-                        break;
-                    default:
-                        System.out.println("Opção Inválida");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Opção inválida!");
-            }
-        } while (op != 6);*/
-
+        JFrame janela = new JFrame("Agenda");
+        janela.setContentPane(new TelaAgenda().getAgenda());
+        janela.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        janela.pack();
+        janela.setVisible(true);
     }
+}
 
 
 
